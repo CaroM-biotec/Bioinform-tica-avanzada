@@ -86,6 +86,12 @@ fc_DrugB=media_DrugB/media_con
 
 fc_RNAi=RNAi/media_con
 
+<img width="301" height="178" alt="image" src="https://github.com/user-attachments/assets/cd64ff50-642e-47a9-805f-772065e5a0e7" />
+
+  #Reto 7: Crear tabla ancha donde: Filas = Gene Columnas = Tratamiento    Valores = promedio de expresión.
+
+ancha= nueva %>% + pivot_wider(names_from = Gene, values_from = Tratamiento)
+
 
 
 
