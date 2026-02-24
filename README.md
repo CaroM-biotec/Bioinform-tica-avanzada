@@ -92,6 +92,7 @@ fc_RNAi=RNAi/media_con
 
 ancha= nueva %>% + pivot_wider(names_from = Gene, values_from = Tratamiento)
 
+<img width="1280" height="192" alt="image" src="https://github.com/user-attachments/assets/f0f9deaa-b6e6-44de-a25c-73e1e4ba56ca" />
 
 
 
