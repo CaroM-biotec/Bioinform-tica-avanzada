@@ -65,3 +65,4 @@ base %>% group_by(Tratamiento) %>% summarise(sd(Expresion_TPM, na.rm = TRUE))
 #Reto 5: ¿Cuál tratamiento aumenta más la expresión bajo estrés alto?
 
 
+
