@@ -64,5 +64,28 @@ base %>% group_by(Tratamiento) %>% summarise(sd(Expresion_TPM, na.rm = TRUE))
 
 #Reto 5: ¿Cuál tratamiento aumenta más la expresión bajo estrés alto?
 
+<img width="596" height="31" alt="image" src="https://github.com/user-attachments/assets/dfc79472-fed7-4d6c-86d0-3504a7897221" />
+
+#Reto 6: Calcular fold change promedio respecto a Control.
+
+media_con=8.17
+
+media_CRIS=8.29
+
+media_DrugA=8.31
+
+media_DrugB=8.45
+
+RNAi=8.35
+
+fc_CRISPR=media_CRIS/media_con
+
+fc_DrugA=media_DrugA/media_con
+
+fc_DrugB=media_DrugB/media_con
+
+fc_RNAi=RNAi/media_con
+
+
 
 
