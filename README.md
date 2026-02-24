@@ -35,6 +35,16 @@ lista_tratamientos <- base %>% + group_by(Tratamiento) %>% + group_split()
   
 base %>% group_by(Tratamiento) %>% summarise(promedio = mean(Expresion_TPM, na.rm = TRUE))
 
+<img width="184" height="119" alt="image" src="https://github.com/user-attachments/assets/071bc878-b53a-4923-8452-ec48d057b8d2" />
+
+
+Reto 2: Filtrar solo: - Tejido = Higado - Estrés = Alto - Tiempo = 48h
+Ordenar por mayor expresión.
+
+  #Para filtrar los datos a Tejido = Higado - Estrés = Alto - Tiempo = 48h
+  
+HAT= filter(base, Tejido=="Higado", Estres=="Alto", Tiempo=="48h")
+
 
 
 
