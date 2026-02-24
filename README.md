@@ -38,15 +38,19 @@ base %>% group_by(Tratamiento) %>% summarise(promedio = mean(Expresion_TPM, na.r
 <img width="184" height="119" alt="image" src="https://github.com/user-attachments/assets/071bc878-b53a-4923-8452-ec48d057b8d2" />
 
 
-Reto 2: Filtrar solo: - Tejido = Higado - Estrés = Alto - Tiempo = 48h
-Ordenar por mayor expresión.
+Reto 2: Filtrar solo: - Tejido = Higado - Estrés = Alto - Tiempo = 48h Ordenar por mayor expresión.
 
   #Para filtrar los datos a Tejido = Higado - Estrés = Alto - Tiempo = 48h
   
 HAT= filter(base, Tejido=="Higado", Estres=="Alto", Tiempo=="48h")
 
+<img width="581" height="638" alt="image" src="https://github.com/user-attachments/assets/46c57aae-5a11-480a-ae92-959b7faf798b" />
 
+Reto 3: ¿Cuáles son los 10 genes más expresados en condiciones de CRISPR?
 
+  #Para ordenar de mayor a menor
+  
+HAT %>% arrange(-Expresion_TPM)
 
 
 
