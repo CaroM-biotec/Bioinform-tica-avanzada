@@ -94,5 +94,15 @@ ancha= nueva %>% + pivot_wider(names_from = Gene, values_from = Tratamiento)
 
 <img width="1280" height="192" alt="image" src="https://github.com/user-attachments/assets/f0f9deaa-b6e6-44de-a25c-73e1e4ba56ca" />
 
+  #Reto 8: Regresar la tabla anterior a formato largo.
+
+tabla_larga=tabla_ancha %>% pivot_longer(cols=-x,names_to="Gene", values_to="Tratamiento")
+tabla_limpia <- na.omit(tabla_larga)
+tabla_limpia1<- tabla_larga %>%
++     rename(
++         Gene = name,
++         Tratamiento = value)
+
+
 
 
