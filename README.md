@@ -59,5 +59,9 @@ HAT %>% arrange(-Expresion_TPM)
   
 base %>% group_by(Tratamiento) %>% summarise(sd(Expresion_TPM, na.rm = TRUE))
 
+<img width="387" height="117" alt="image" src="https://github.com/user-attachments/assets/c6a6fe50-d08c-4abc-b48e-286ccc9e1f58" />
+<img width="184" height="119" alt="image" src="https://github.com/user-attachments/assets/071bc878-b53a-4923-8452-ec48d057b8d2" />
+
+#Reto 5: ¿Cuál tratamiento aumenta más la expresión bajo estrés alto?
 
 
