@@ -107,8 +107,9 @@ tabla_limpia1<- tabla_larga %>%
 
   #Reto 9: Separar la variable Sample_ID en Tejido, Tiempo y Replica.
 
-  base$Gene=gsub("Gene_","",base$Gene)
+base$Gene=gsub("Gene_","",base$Gene)
 
+<img width="516" height="236" alt="image" src="https://github.com/user-attachments/assets/43db909d-8f38-49de-b0dc-94aecd25381c" />
   
 
 
