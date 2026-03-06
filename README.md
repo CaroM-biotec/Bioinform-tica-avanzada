@@ -110,6 +110,80 @@ tabla_limpia1<- tabla_larga %>%
 base$Gene=gsub("Gene_","",base$Gene)
 
 <img width="516" height="236" alt="image" src="https://github.com/user-attachments/assets/43db909d-8f38-49de-b0dc-94aecd25381c" />
+
+#Reto 10: Identificar genes con: - Expresión media > 15 TPM - Bajo estrés
+alto - En al menos 2 tejidos
+
+genes_filtrados <- base %>%
++     filter(Estres == "Bajo") %>%                
++     group_by(Gene, Tejido) %>%
++     summarise(media_TPM = mean(Expresion_TPM), .groups = "drop") %>%
++     filter(media_TPM > 5) %>%                   
++     group_by(Gene) %>%
++     summarise(n_tejidos = n_distinct(Tejido)) %>%
++     filter(n_tejidos >= 2)
+
+
+#Reto 11: ¿Cuál combinación Tratamiento–Tejido produce mayor varianza?
+  varianza_trat_teji <- base %>%
++     group_by(Tratamiento, Tejido) %>%
++     summarise(varianza = var(Expresion_TPM, na.rm = TRUE), .groups = "drop") %>%
++     arrange(desc(varianza))
+
+  varianza_trat_teji %>%
++     slice_max(varianza, n = 1)
+
+
+#Reto 12: Generar tabla con: - Media por Gene - Media global - Diferencia
+respecto a la media global
+
+  media_global <- mean(base$Expresion_TPM, na.rm = TRUE)
   
+  tabla_genes <- base %>%
++     group_by(Gene) %>%
++     summarise(media_gene = mean(Expresion_TPM, na.rm = TRUE)) %>%
++     mutate(
++         media_global = media_global,
++         diferencia = media_gene - media_global)
+
+
+#Reto 13: Graficar la distribución de expresión (histograma) general.
+  grafica <- ggplot(base, aes(x = Expresion_TPM)) +
++     geom_histogram(bins = 30, na.rm = TRUE)
+
+
+#Reto 14: Hacer boxplot de expresión por Tratamiento.
+  ggplot(base, aes(x = Tratamiento, y = Expresion_TPM)) +
++     geom_boxplot(na.rm = TRUE) +
++     labs(
++         title = "Expresión génica por tratamiento",
++         x = "Tratamiento",
++         y = "Expresión (TPM)")
+
+
+#Reto 15: Hacer boxplot de expresión por Estrés, coloreado por
+Tratamiento.
+  ggplot(base, aes(x = Estres, y = Expresion_TPM, fill = Tratamiento)) +
++     geom_boxplot(na.rm = TRUE) +
++     labs(
++         title = "Expresión génica por nivel de estrés",
++         x = "Estrés",
++         y = "Expresión (TPM)",
++         fill = "Tratamiento")
+
+
+#Reto 16: Graficar media de expresión por Tratamiento (usar datos
+resumidos).
+  datos_resumen <- base %>%
++     group_by(Tratamiento) %>%
++     summarise(media_expresion = mean(Expresion_TPM, na.rm = TRUE))
+
+  ggplot(datos_resumen, aes(x = Tratamiento, y = media_expresion)) +
++     geom_col() +
++     labs(
++         title = "Media de expresión génica por tratamiento",
++         x = "Tratamiento",
++         y = "Media de expresión (TPM)")
+
 
 
