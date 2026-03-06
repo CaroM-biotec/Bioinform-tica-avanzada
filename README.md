@@ -133,6 +133,7 @@ genes_filtrados <- base %>%
   varianza_trat_teji %>%
 +     slice_max(varianza, n = 1)
 
+<img width="254" height="49" alt="image" src="https://github.com/user-attachments/assets/8f9382b1-7d44-4123-93e0-6073b18f4d6c" />
 
 #Reto 12: Generar tabla con: - Media por Gene - Media global - Diferencia
 respecto a la media global
