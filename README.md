@@ -123,6 +123,7 @@ genes_filtrados <- base %>%
 +     summarise(n_tejidos = n_distinct(Tejido)) %>%
 +     filter(n_tejidos >= 2)
 
+<img width="182" height="193" alt="image" src="https://github.com/user-attachments/assets/e817cacd-1e66-4128-bc27-ead2b5831921" />
 
 #Reto 11: ¿Cuál combinación Tratamiento–Tejido produce mayor varianza?
   varianza_trat_teji <- base %>%
@@ -147,11 +148,13 @@ respecto a la media global
 +         media_global = media_global,
 +         diferencia = media_gene - media_global)
 
+<img width="377" height="198" alt="image" src="https://github.com/user-attachments/assets/38ff3746-bac5-4b4d-87dd-ef645febc765" />
 
 #Reto 13: Graficar la distribución de expresión (histograma) general.
   grafica <- ggplot(base, aes(x = Expresion_TPM)) +
 +     geom_histogram(bins = 30, na.rm = TRUE)
 
+<img width="858" height="343" alt="image" src="https://github.com/user-attachments/assets/a3d52814-0539-4378-9330-e5414e06b6ac" />
 
 #Reto 14: Hacer boxplot de expresión por Tratamiento.
   ggplot(base, aes(x = Tratamiento, y = Expresion_TPM)) +
@@ -161,6 +164,7 @@ respecto a la media global
 +         x = "Tratamiento",
 +         y = "Expresión (TPM)")
 
+<img width="773" height="341" alt="image" src="https://github.com/user-attachments/assets/c9bfa7b4-4a82-4fee-8d42-cd5ae347a56c" />
 
 #Reto 15: Hacer boxplot de expresión por Estrés, coloreado por
 Tratamiento.
@@ -172,6 +176,7 @@ Tratamiento.
 +         y = "Expresión (TPM)",
 +         fill = "Tratamiento")
 
+<img width="772" height="346" alt="image" src="https://github.com/user-attachments/assets/fa08c2d1-75cc-43a1-9541-33870da5c03c" />
 
 #Reto 16: Graficar media de expresión por Tratamiento (usar datos
 resumidos).
@@ -185,6 +190,8 @@ resumidos).
 +         title = "Media de expresión génica por tratamiento",
 +         x = "Tratamiento",
 +         y = "Media de expresión (TPM)")
+
+<img width="767" height="339" alt="image" src="https://github.com/user-attachments/assets/0d958837-1b7c-4785-82a3-5ed1e87feb5b" />
 
 
 
